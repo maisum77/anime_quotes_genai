@@ -1,8 +1,7 @@
 import os
 from crewai import Agent, Task, Crew, LLM
 
-# Set your Google API key
-os.environ['GOOGLE_API_KEY'] = 'AIzaSyCXWkd3UsWNYbTDjhvx5lbZM6DYxX0NllQ'
+# Set your Google API 
 
 # Configure Gemini LLM
 gemini_llm = LLM(
