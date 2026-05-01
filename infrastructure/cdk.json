@@ -1,0 +1,60 @@
+{
+  "app": "python3 app.py",
+  "watch": {
+    "include": [
+      "**/*.py"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      "source.bat",
+      "**/__pycache__/**",
+      "**/.git/**"
+    ]
+  },
+  "context": {
+    "dev": {
+      "environment": "dev",
+      "region": "us-east-1",
+      "lambda_memory": {
+        "preprocessing": 256,
+        "generation": 1024,
+        "postprocessing": 256
+      },
+      "lambda_timeout": {
+        "preprocessing": 30,
+        "generation": 120,
+        "postprocessing": 60
+      }
+    },
+    "staging": {
+      "environment": "staging",
+      "region": "us-east-1",
+      "lambda_memory": {
+        "preprocessing": 256,
+        "generation": 2048,
+        "postprocessing": 512
+      },
+      "lambda_timeout": {
+        "preprocessing": 30,
+        "generation": 180,
+        "postprocessing": 90
+      }
+    },
+    "prod": {
+      "environment": "prod",
+      "region": "us-east-1",
+      "lambda_memory": {
+        "preprocessing": 512,
+        "generation": 3072,
+        "postprocessing": 512
+      },
+      "lambda_timeout": {
+        "preprocessing": 30,
+        "generation": 300,
+        "postprocessing": 120
+      }
+    }
+  }
+}
